@@ -1,0 +1,395 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+:root{
+  --primary-color:#C7DCA7;
+  --secondary-color:rgb(103, 106, 213);
+  --max-width:1100px;
+}
+.big-header{
+  font-size: 35px !important;
+}
+.small-header{
+  font-size: 30px !important;
+}
+.default-bg{
+  background-color: rgba(196, 196, 196, 0.254) !important;
+  color: black !important ;
+}
+.primary-color{
+  color: #C7DCA7 !important;
+}
+.primary-bg{
+  background-color: #C7DCA7 !important;
+  color: black !important ;
+}
+.secondary-color{
+  color: #89B9AD !important;
+}
+.secondary-bg{
+  background-color: #89B9AD !important;
+  color: white !important;
+}
+.dark-color{
+  color: #6c6c6c !important;
+}
+.dark-bg{
+  background-color: #6c6c6c !important;
+}
+.light-color{
+  color: #FFC5C5 !important;
+}
+.light-bg{
+  background-color: #FFC5C5 !important;
+  color: black !important;
+}
+.remove-bg{
+  background-color: rgb(199, 0, 0) !important;
+}
+.black-color{
+  color: black !important;
+}
+
+
+body{
+  background-color: #f6f6f6;
+}
+#main-container{
+  display: flex; 
+   flex-direction: column; 
+  align-items: center; 
+   justify-content: center;
+}
+
+ #login{
+  width:100%;
+height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+ }
+ #login-cover-img{
+  width: 100%;
+  height: auto;
+border-bottom-left-radius: 25px ;
+border-bottom-right-radius: 25px ;
+}
+ #login h1{
+  font-size: 40px;
+  margin: 50px 0 20px 0;
+ }
+ #login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+border-radius: 20px;
+min-height: 370px;
+ }
+ #confirm-login{
+  background-color: rgba(196, 196, 196, 0.254) ;
+  color: white;
+  align-self: center;
+}
+ #login-img{
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)); 
+  margin-bottom: 20px;
+ }
+td button {
+  width: 40px; 
+  height: 40px; 
+  padding: 10px; 
+  margin: 5px; 
+  border: none; 
+  background-color: rgba(196, 196, 196, 0.254);
+  border-radius: 50%;
+  cursor: pointer;
+}
+td button:focus,#schedule:focus {
+  background-color: #C7DCA7; 
+  color: white; 
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#date-selector{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;  
+}
+#date-selector-container,#admin-date-selector-container{
+  margin-bottom: 20px;
+  padding: 10px 0;
+
+}
+/* #admin-date-selector #main-header{
+  font-size: 35px;
+} */
+#future-lessons{
+  /* margin: 10px 0px ; */
+}
+#admin-date-selector{
+  margin-bottom: 20px;
+  /* border:3px solid green; */
+}
+/* #date-selector-container #main-header{
+  font-size: 35px;
+} */
+.same-row{
+  display: flex;
+}
+#date-selector-container h1,#admin-date-selector h1{
+ color: black;
+ font-size: 25px;
+}
+.months-arrow{
+  cursor: pointer;
+  background-color: transparent;
+  border:none;
+  font-size: 30px;
+  margin: 0 5px;
+}
+#calendar{
+  direction:rtl;
+}
+#next-lessons{
+  background-color: white;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 0px 10px 0;
+  margin-bottom: 20px;
+}
+#next-lessons h1,#next-lessons h3{
+  margin-right: 15px;
+}
+
+#next-lessons-container{
+  min-width:95%;
+  text-align: end;
+}
+.shadow-box.lesson{
+  padding: 0 5px 0 0 ;
+  margin: 10px 0 ;
+  /* border:3px solid blue; */
+}
+#sunset-img{
+  width: 30px;
+  height: 30px;
+  margin: 0 2px;
+}
+#sunset-container{
+  display: flex;
+}
+#lesson-gif{
+  width: 60px;
+  height: auto;
+  align-self: center;
+  margin-top: 5px;
+  }
+section#hour-selector h1{
+  font-size: 35px;
+}
+section#hour-selector{
+  color:black;
+  width: 100%;
+}
+.hours-container button {
+  padding: 10px 15px; 
+  margin: 5px; 
+  border: none; 
+  background-color: rgba(196, 196, 196, 0.254);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.hours-container {
+  margin: 10px 20px 10px 20px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ .back{
+  align-self: self-start;
+  cursor: pointer;
+  background-color: transparent;
+  border:none;
+  font-size: 20px;
+  padding: 10px 0;
+}
+ .back i{
+  margin:5px;
+}
+
+#summary{
+  width: 100%;
+}
+#summary-details{
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 30px 0;
+}
+#lesson-details{
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 15px 0;
+}
+section#summary{
+  color: black;
+  font-size: 20px;
+}
+#confirm-summary{
+  padding: 5px 25px;
+  font-size: 18px;
+}
+.shadow-box{
+  display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 95%;
+  padding: 30px 10px;
+}
+[dir="rtl"] .MuiFormLabel-root{
+  left: auto;
+  right: auto;
+  transform-origin: top right;
+  text-align: right;
+  margin-right: 25px;
+}
+[dir="rtl"] .MuiOutlinedInput-notchedOutline {
+  text-align: right ;
+}
+
+section#approve-message{
+  margin-top: 50px;
+  color:black;
+  font-size: 20px;
+}
+section#approve-message h1{
+  font-size: 30px;
+}
+section#approve-message i{
+  margin-bottom: 20px;
+}
+button {
+  padding: 5px 10px; 
+  margin: 15px; 
+  border: none; 
+  background-color: rgba(196, 196, 196, 0.254);
+  border-radius: 8px;
+  cursor: pointer;
+}
+p{
+  padding: 3px;
+}
+#img-bg {
+  width: 100%;
+  height: 75vh;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to top, rgba(137, 185, 173, 0), #C7DCA7);
+  font-size: 20px;
+}
+#schedule{
+  padding: 10px 30px;
+  font-size: 30px;
+}
+#bg{
+  width:100%;
+  height: auto;
+  bottom:0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
+}
+#personal-img{
+  width:200px;
+  height: auto;
+  border-radius: 35px;
+  margin-bottom: 40px;
+  margin-top: 75px;
+}
+.available-day{
+  color: white !important;
+}
+#logout-btn{
+  align-self: flex-start;
+  margin: 20px 0px 20px 10px;
+}
+#add-lesson-btn{
+  margin-left: 10px;
+}
+
+#cancel-remove-hour{
+    background-color: rgba(196, 196, 196, 0.254) ;
+    margin: 10px;
+}
+#admin-add-lesson h1{
+  font-size: 30px;
+}
+#admin-add-lesson #summary-details {
+  margin: 10px 0 0 0;
+}
+
+
+.back-to-home-container {
+  width: fit-content;
+  overflow: hidden;
+  direction: rtl;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.back-to-home {
+  animation: fillAnimation 6s ease-in-out;
+  transform-origin: right;
+  background-color: #749a91;
+}
+.back-to-home-btn{
+  margin: 5px 12px !important;
+  text-wrap: nowrap !important;
+}
+@keyframes fillAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
