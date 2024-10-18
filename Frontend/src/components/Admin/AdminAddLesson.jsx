@@ -26,7 +26,7 @@ const AdminAddLesson = () => {
   const handleConfirmSummary = async () => {
     try {
       // Send the required data to the backend
-      const response = await axios.put('/api/days/update', {
+      const response = await axios.put('http://localhost:5000/api/days/update', {
         date: formattedDate,
         hour,
         name,
@@ -50,7 +50,7 @@ const AdminAddLesson = () => {
     // e.preventDefault();
     try {
       // Send the required data to the backend
-      const response = await axios.put('/api/days/update', {
+      const response = await axios.put('http://localhost:5000/api/days/update', {
         date: formattedDate,
         hour,
         name,

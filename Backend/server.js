@@ -13,8 +13,12 @@ connectDB();
 const app = express();
 
 // Middleware to parse JSON and handle CORS
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
+app.use(cors({
+  origin:["http://localhost:5173"],
+  methods:["GET","POST", "PUT", "DELETE"], 
+  credentials: true}))
 
 // Test route to verify server is running
 app.get('/', (req, res) => {

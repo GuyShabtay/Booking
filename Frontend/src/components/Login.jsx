@@ -15,7 +15,7 @@ const Login = () => {
     // e.preventDefault();
     try {
       // Call the backend API to check login or register user
-      const response = await axios.post('/api/days/login', { name, school });
+      const response = await axios.post('http://localhost:5000/api/days/login', { name, school });
       console.log(response);
       
       if (response.data.message === 'login') {

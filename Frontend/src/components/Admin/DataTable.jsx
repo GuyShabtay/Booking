@@ -11,6 +11,7 @@ import '../style.css';
 import RemoveHourModal from './RemoveHourModal';
 
 
+
 // Define RTL cache
 const cacheRtl = createCache({
   key: 'muirtl',
@@ -32,7 +33,6 @@ const columns = [
 
 export default function DataTable({formattedDate}) {
   const [rows, setRows] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [selectedRows, setSelectedRows] = useState([]); // State to track selected rows (IDs)
   const [showModal, setShowModal] = useState(false);
   const [selectedHour, setSelectedHour] = useState(null);
@@ -41,7 +41,7 @@ export default function DataTable({formattedDate}) {
   // Fetch the taken hours from the backend
 const fetchTakenHours = async () => {
   try {
-    const { data } = await axios.get('/api/days/taken-hours'); // Adjust the endpoint if necessary
+    const { data } = await axios.get('http://localhost:5000/api/days/taken-hours'); // Adjust the endpoint if necessary
 
     // Sort by date and then by hour for entries with the same date
     const sortedData = data.sort((a, b) => {
@@ -56,13 +56,12 @@ const fetchTakenHours = async () => {
   } catch (error) {
     console.error('Error fetching taken hours:', error);
   } finally {
-    setLoading(false);
   }
 };
 
 const fetchFilteredHours = async () => {
   try {
-    const { data } = await axios.get('/api/days/taken-hours');
+    const { data } = await axios.get('http://localhost:5000/api/days/taken-hours');
     const filteredData = data.filter(row => row.date === formattedDate);
 
     // Sort by date and then by hour for entries with the same date
@@ -78,7 +77,6 @@ const fetchFilteredHours = async () => {
   } catch (error) {
     console.error('Error fetching filtered hours:', error);
   } finally {
-    setLoading(false);
   }
 };
 
@@ -106,6 +104,7 @@ const handleSelectionChange = (selectionModel) => {
 
   // Handle removal of selected hours
   const handleRemoveHour = async () => {
+
     const hoursToRemove = selectedRows.map(rowId => {
       const row = rows.find(row => row.id === rowId);
       return { date: row.date, hour: row.hour, name: row.name, school: row.school };
@@ -114,9 +113,10 @@ const handleSelectionChange = (selectionModel) => {
     try {
       // Perform removal requests
       await Promise.all(hoursToRemove.map(async (hour) => {
-        await axios.put('/api/days/remove-taken-hour', hour);
+        await axios.put('http://localhost:5000/api/days/remove-taken-hour', hour);
       }));
       setShowModal(false);
+
 
       // Refresh the entire page
       window.location.reload();
@@ -133,6 +133,7 @@ const handleSelectionChange = (selectionModel) => {
 
   return (
     <CacheProvider value={cacheRtl}>
+    
       <ThemeProvider theme={theme}>
         <Paper
           sx={{
@@ -148,7 +149,6 @@ const handleSelectionChange = (selectionModel) => {
         className='data-grid'
         rows={rows}
         columns={columns}
-        loading={loading} 
         pageSizeOptions={[5, 10]}
         disableSelectionOnClick
         sx={{
@@ -178,7 +178,6 @@ const handleSelectionChange = (selectionModel) => {
         )}
       </ThemeProvider>
       {showModal && <RemoveHourModal selectedHour={selectedHour} selectedDate={selectedDate} showModal={showModal} setShowModal={setShowModal} handleRemoveHour={handleRemoveHour}/>}
-
     </CacheProvider>
   );
 }

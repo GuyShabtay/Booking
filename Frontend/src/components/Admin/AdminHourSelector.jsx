@@ -31,14 +31,14 @@ const AdminHourSelector = () => {
     if (newHour) {
       setLoading(true); // Start loading while adding hour
       try {
-        const { data } = await axios.get(`/api/days/findDay`, {
+        const { data } = await axios.get(`http://localhost:5000/api/days/findDay`, {
           params: { date: formattedDate }
         });
 
         if (data) {
           // Day exists, update available hours
           const updatedHours = [...data.availableHours, newHour];
-          await axios.put(`/api/days`, { availableHours: updatedHours, date: formattedDate });
+          await axios.put(`http://localhost:5000/api/days`, { availableHours: updatedHours, date: formattedDate });
           // window.location.reload();
 
         }
@@ -49,7 +49,7 @@ const AdminHourSelector = () => {
         //   date: formattedDate,
         //   availableHours: [newHour],
         // };
-        await axios.post(`/api/days/add`, {
+        await axios.post(`http://localhost:5000/api/days/add`, {
           date: formattedDate,
           dayName,
            availableHours: [newHour]
@@ -71,7 +71,7 @@ const AdminHourSelector = () => {
   const fetchDay = async () => {
     setLoading(true); // Start loading
     try {
-      const { data } = await axios.get(`/api/days/findDay`, {
+      const { data } = await axios.get(`http://localhost:5000/api/days/findDay`, {
         params: { date: formattedDate }
       });
 
@@ -117,7 +117,7 @@ const AdminHourSelector = () => {
   // Handle remove hour
   const handleRemoveHour = async () => {
     try {
-      const response = await axios.put('/api/days/remove-available-hour', {
+      const response = await axios.put('http://localhost:5000/api/days/remove-available-hour', {
         date: formattedDate,
         hour: selectedHour,
       });
