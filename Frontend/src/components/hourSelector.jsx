@@ -24,7 +24,7 @@ const HourSelector = () => {
     const fetchDay = async () => {
       setLoading(true); // Start loading
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/days/findDay`, {
+        const { data } = await axios.get(`https://math-lessons-backend.onrender.com/api/days/findDay`, {
           params: { date: formattedDate }
         });
 

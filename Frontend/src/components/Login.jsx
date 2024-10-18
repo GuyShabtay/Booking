@@ -15,7 +15,7 @@ const Login = () => {
     // e.preventDefault();
     try {
       // Call the backend API to check login or register user
-      const response = await axios.post('http://localhost:5000/api/days/login', { name, school });
+      const response = await axios.post('https://math-lessons-backend.onrender.com/api/days/login', { name, school });
       
       // Store user details in sessionStorage for future auto-login
       localStorage.setItem('name', name);

@@ -35,7 +35,7 @@ const FrontPage = () => {
   useEffect(() => {
     const removeExpiredHours = async () => {
       try {
-        await axios.put('http://localhost:5000/api/days/remove-expired-hours');
+        await axios.put('https://math-lessons-backend.onrender.com/api/days/remove-expired-hours');
       } catch (error) {
         console.error('Error removing expired hours:', error);
       }

@@ -23,7 +23,7 @@ const AdminDateSelector = () => {
   useEffect(() => {
     const fetchDays = async () => {
       setLoading(true);
-      const { data } = await axios.get(`http://localhost:5000/api/days`);
+      const { data } = await axios.get(`https://math-lessons-backend.onrender.com/api/days`);
       const daysWithAvailableHours = data.filter(day => day.availableHours.length > 0);
       const availableDaysArray = daysWithAvailableHours.map(day => day.date);
       setAvailableDays(availableDaysArray);

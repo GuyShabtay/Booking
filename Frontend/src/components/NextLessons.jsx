@@ -16,7 +16,7 @@ const NextLessons = () => {
     // setLoading(true); // Start loading
 
     if (storedName && storedSchool) {
-      axios.get('http://localhost:5000/api/days/taken-hours')
+      axios.get('https://math-lessons-backend.onrender.com/api/days/taken-hours')
         .then((response) => {
           const lessons = response.data.filter(lesson => lesson.name === storedName && lesson.school === storedSchool);
           setTakenLessons(lessons);

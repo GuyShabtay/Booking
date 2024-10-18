@@ -41,7 +41,7 @@ export default function DataTable({formattedDate}) {
   // Fetch the taken hours from the backend
 const fetchTakenHours = async () => {
   try {
-    const { data } = await axios.get('http://localhost:5000/api/days/taken-hours'); // Adjust the endpoint if necessary
+    const { data } = await axios.get('https://math-lessons-backend.onrender.com/api/days/taken-hours'); // Adjust the endpoint if necessary
 
     // Sort by date and then by hour for entries with the same date
     const sortedData = data.sort((a, b) => {
@@ -61,7 +61,7 @@ const fetchTakenHours = async () => {
 
 const fetchFilteredHours = async () => {
   try {
-    const { data } = await axios.get('http://localhost:5000/api/days/taken-hours');
+    const { data } = await axios.get('https://math-lessons-backend.onrender.com/api/days/taken-hours');
     const filteredData = data.filter(row => row.date === formattedDate);
 
     // Sort by date and then by hour for entries with the same date
@@ -112,7 +112,7 @@ const handleSelectionChange = (selectionModel) => {
     try {
       // Perform removal requests
       await Promise.all(hoursToRemove.map(async (hour) => {
-        await axios.put('http://localhost:5000/api/days/remove-taken-hour', hour);
+        await axios.put('https://math-lessons-backend.onrender.com/api/days/remove-taken-hour', hour);
       }));
       setShowModal(false);
 
