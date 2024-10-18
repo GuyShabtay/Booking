@@ -1,12 +1,12 @@
-import FrontPage from './components/frontPage';
+import FrontPage from './components/FrontPage';
 import AdminDateSelector from './components/Admin/AdminDateSelector';
-import './components/style.css';
-import DateSelector from './components/dateSelector';
+import './components/Style.css';
+import DateSelector from './components/DateSelector';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Login from './components/Login';
-import HourSelector from './components/hourSelector';
-import Summary from './components/summary';
-import ApproveMessage from './components/approveMessage';
+import HourSelector from './components/HourSelector';
+import Summary from './components/Summary';
+import ApproveMessage from './components/ApproveMessage';
 import Layout from './components/Layout';
 import AdminHourSelector from './components/Admin/AdminHourSelector';
 import AdminAddLesson from './components/Admin/AdminAddLesson';

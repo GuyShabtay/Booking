@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
-import HourSelector from './hourSelector';
+import './Style.css';
+import HourSelector from './HourSelector';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { he } from 'date-fns/locale';
@@ -79,12 +79,6 @@ const DateSelector = () => {
 
   };
 
-
-  // useEffect(() => {
-  //    You can perform any additional actions when the month changes
-  //   console.log('Month changed:', currentDate.toLocaleString('default', { month: 'long' }));
-  // }, [currentDate]);
-
   const dateToString = (date) => {
     return format(date, 'dd/MM/yy', { locale: he }) };
 
@@ -104,7 +98,7 @@ const DateSelector = () => {
     <NextLessons/>
     <div id='date-selector-container' className='shadow-box primary-color'>
 
-      <h1 className='primary-color big-header'>בחירת תאריך</h1>
+      <h1 className='primary-color large-header'>בחירת תאריך</h1>
 
       <div className="same-row">
       

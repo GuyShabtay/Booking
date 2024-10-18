@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import './style.css';
+import './Style.css';
 import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti'; // Import the confetti library
 import Button from '@mui/material/Button';

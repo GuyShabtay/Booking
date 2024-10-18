@@ -9,8 +9,6 @@
     "server": "nodemon backend/server.js",
     "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

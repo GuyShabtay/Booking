@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { he } from 'date-fns/locale';
-import Summary from '../summary';
-import '../style.css';
+import Summary from '../Summary';
+import '../Style.css';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import Loader from '../Loader'; // Ensure you have the Loader component available
@@ -121,7 +121,6 @@ const AdminHourSelector = () => {
         date: formattedDate,
         hour: selectedHour,
       });
-      console.log('remove',formattedDate,selectedHour)
 
 
       // Refetch the updated data
@@ -144,9 +143,9 @@ const AdminHourSelector = () => {
       ) : (
         <>
 
-          <button className='back' onClick={handleBack}><i className="fa-solid fa-angle-left"></i>חזרה</button>
+          <button className='back' onClick={handleBack}><i className="fa-solid fa-angle-right"></i>חזרה</button>
           
-          <h1 className='small-header'>({dayName}) {formattedDate}</h1>
+          <h1 className='large-header'>({dayName}) {formattedDate}</h1>
           <h1 className='secondary-color'>שעות תפוסות</h1>
           <DataTable formattedDate={formattedDate} className="data-table"/>
           <h1 className='secondary-color'>שעות פנויות</h1>

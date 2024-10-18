@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import rtlPlugin from 'stylis-plugin-rtl';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
-import '../style.css';
+import '../Style.css';
 import RemoveHourModal from './RemoveHourModal';
 
 
@@ -98,7 +98,6 @@ const handleSelectionChange = (selectionModel) => {
 
   setSelectedHour(hoursToRemove[0]?.hour); // Set selected hour immediately using the new selection
   setSelectedDate(hoursToRemove[0]?.date); // Set selected hour immediately using the new selection
-  console.log(hoursToRemove[0]?.hour); // Log the selected hour
 };
 
 
@@ -127,8 +126,6 @@ const handleSelectionChange = (selectionModel) => {
 
   const handleHourButtonClick = () => {
     setShowModal(true);
-    // setSelectedHour(hoursToRemove[0]?.hour)
-    // console.log(selectedHour)
   };
 
   return (

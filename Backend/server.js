@@ -1,8 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
-import connectDB from './config/db.js';
-import router from './routs/dayRouts.js';
+import connectDB from './config/DB.js';
+import router from './routs/Routs.js';
 import cors from 'cors';
 
 const port = process.env.PORT || 5000;

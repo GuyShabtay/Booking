@@ -4,7 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
 import BadgeIcon from '@mui/icons-material/Badge';
 
-const drinkOptions = ['מקיף א', 'מקיף ב', 'מקיף ד', 'מקיף ה', 'מקיף ו', 'רונסון', 'אורט אפרידר'];
+const drinkOptions = ['אורט מקיף א', 'מקיף ב', 'מקיף ד', 'מקיף ה', 'מקיף ו', 'אורט רונסון', 'אורט אפרידר','אומנויות'];
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState('');

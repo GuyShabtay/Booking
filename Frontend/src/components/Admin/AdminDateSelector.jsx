@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../style.css';
+import '../Style.css';
 import AdminHourSelector from './AdminHourSelector';
 import axios from 'axios';
 import { format } from 'date-fns';
@@ -76,10 +76,6 @@ const AdminDateSelector = () => {
     setShowHourSelector(false); 
   };
 
-  // useEffect(() => {
-  //   // You can perform any additional actions when the month changes
-  //   console.log('Month changed:', currentDate.toLocaleString('default', { month: 'long' }));
-  // }, [currentDate]);
 
   const dateToString = (date) => {
     return format(date, 'dd/MM/yy', { locale: he }) };
@@ -99,7 +95,7 @@ const AdminDateSelector = () => {
       <>
     <Button id='logout-btn' className='primary-bg' variant="contained" onClick={handleLogout}>התנתקות</Button>
     <div id='admin-date-selector-container' className='shadow-box'>
-      <h1 className='primary-color big-header'>בחירת תאריך</h1>
+      <h1 className='primary-color large-header'>בחירת תאריך</h1>
 
       <div className="same-row">
       

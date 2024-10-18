@@ -16,13 +16,6 @@ const Login = () => {
     try {
       // Call the backend API to check login or register user
       const response = await axios.post('http://localhost:5000/api/days/login', { name, school });
-      console.log(response);
-      
-      if (response.data.message === 'login') {
-        console.log('Login successful');
-      } else if (response.data.message === 'register') {
-        console.log('User registered');
-      }
       
       // Store user details in sessionStorage for future auto-login
       localStorage.setItem('name', name);

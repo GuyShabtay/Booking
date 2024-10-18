@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import './style.css';
+import './Style.css';
 import BadgeIcon from '@mui/icons-material/Badge';
 import SchoolIcon from '@mui/icons-material/School';
 import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
 
-const schoolOptions = ['מקיף א', 'מקיף ב', 'מקיף ד', 'מקיף ה', 'מקיף ו', 'רונסון', 'אורט אפרידר'];
+const schoolOptions = ['אורט מקיף א', 'מקיף ב', 'מקיף ד', 'מקיף ה', 'מקיף ו', 'אורט רונסון', 'אורט אפרידר','אומנויות'];
 
 export default function ValidationTextFields({ updateDetails, name, setName, school, setSchool }) {
   const [errors, setErrors] = useState({
@@ -60,7 +60,6 @@ export default function ValidationTextFields({ updateDetails, name, setName, sch
     if (!newErrors.name && !newErrors.school) {
       // Proceed with form submission
       updateDetails(name, school);
-      console.log("Form Submitted Successfully");
     }
   };
 

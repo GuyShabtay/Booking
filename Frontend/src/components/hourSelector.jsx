@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import Summary from './summary';
-import './style.css';
+import Summary from './Summary';
+import './Style.css';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import Loader from './Loader'; // Ensure you have the Loader component available
@@ -62,7 +62,7 @@ const HourSelector = () => {
         <Loader /> // Show loader while fetching data
       ) : (
         <>
-          <button className='back' onClick={handleBack} ><i className="fa-solid fa-angle-left"></i>חזרה</button>
+          <button className='back' onClick={handleBack} ><i className="fa-solid fa-angle-right"></i>חזרה</button>
           <div className='shadow-box'>
           <h1 className='dark-color'>בחירת שעה</h1>
           <p>({dayName}) {formattedDate}</p>

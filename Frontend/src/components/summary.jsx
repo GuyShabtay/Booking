@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import axios from 'axios';
-import './style.css';
+import './Style.css';
 
 const Summary = () => {
   const [showApproveMessage, setShowApproveMessage] = useState(false);
@@ -31,7 +31,6 @@ const Summary = () => {
       });
 
       if (response.status === 200) {
-        console.log('Hour updated successfully', response.data);
         sessionStorage.setItem('progress', 4);
         navigate('/approve-message');
       } else {
@@ -44,9 +43,9 @@ const Summary = () => {
 
   return (
     <section id='summary'>
-      <button className='back' onClick={handleBack}><i className="fa-solid fa-angle-left"></i>חזרה</button>
+      <button className='back' onClick={handleBack}><i className="fa-solid fa-angle-right"></i>חזרה</button>
       <div className='shadow-box'>
-        <h1 className='light-color big-header'>סיכום</h1>
+        <h1 className='light-color large-header'>סיכום</h1>
         <div id="summary-details">
           <div className='same-row'>
             <p>({dayName})</p>

@@ -1,5 +1,5 @@
 import express from 'express';
-import asyncHandler from '../middleware/asyncHandler.js';
+import AsyncHandler from '../middleware/AsyncHandler.js';
 import Day from '../models/dayModel.js';
 import User from '../models/UserModel.js';
 
@@ -7,17 +7,15 @@ import User from '../models/UserModel.js';
 const router = express.Router();
 
 // GET route to fetch all days (you can modify to fetch by date if necessary)
-router.get('/', asyncHandler(async (req, res) => {
-  console.log('first1')
+router.get('/', AsyncHandler(async (req, res) => {
 
   const days = await Day.find({});
   res.json(days);
 }));
 
 // GET route to fetch a specific day by date
-router.get('/findDay', asyncHandler(async (req, res) => {
+router.get('/findDay', AsyncHandler(async (req, res) => {
   const { date } = req.query; // Use req.query to get the date from query parameters
-  console.log(date)
   try {
     const day = await Day.findOne({ date }); // Find a day by date
     if (day) {
@@ -31,7 +29,7 @@ router.get('/findDay', asyncHandler(async (req, res) => {
 
 
 // POST route to add a new day
-router.post('/add', asyncHandler(async (req, res) => {
+router.post('/add', AsyncHandler(async (req, res) => {
   const { date,dayName, availableHours } = req.body;
 
   try {
@@ -52,7 +50,7 @@ router.post('/add', asyncHandler(async (req, res) => {
 }));
 
 // PUT route to update existing day by date
-router.put('/', asyncHandler(async (req, res) => {
+router.put('/', AsyncHandler(async (req, res) => {
   const { date, availableHours } = req.body; // Get date and availableHours from the request body
 
   try {
@@ -74,9 +72,8 @@ router.put('/', asyncHandler(async (req, res) => {
 }));
 
 
-router.put('/update', asyncHandler(async (req, res) => {
+router.put('/update', AsyncHandler(async (req, res) => {
   const { date, hour, name, school } = req.body;
-  console.log(date, hour, name, school)
 
   // Validate that name and school are present in the request body
   if (!name || !school) {
@@ -143,7 +140,7 @@ router.get('/taken-hours', async (req, res) => {
 
 
 // PUT route to remove hour from takenHours and add it back to availableHours
-router.put('/remove-taken-hour', asyncHandler(async (req, res) => {
+router.put('/remove-taken-hour', AsyncHandler(async (req, res) => {
   const { date, hour, name, school } = req.body; // Get the hour details from the request body
 
   try {
@@ -172,9 +169,8 @@ router.put('/remove-taken-hour', asyncHandler(async (req, res) => {
 }));
 
 // POST route to login or register a new user
-router.post('/login', asyncHandler(async (req, res) => {
+router.post('/login', AsyncHandler(async (req, res) => {
   const { name, school } = req.body;
-  console.log('name:', name, 'school:', school);
 
   try {
     // Check if the user already exists (for login)
@@ -182,13 +178,11 @@ router.post('/login', asyncHandler(async (req, res) => {
     
     if (user) {
       // If user exists, send a 'login' message
-      console.log('User found, login');
       return res.status(200).json({ message: 'login', user });
     } else {
       // If user doesn't exist, register a new user
       const newUser = new User({ name, school });
       await newUser.save();
-      console.log('User registered');
       
       // Send a 'register' message
       return res.status(201).json({ message: 'register', user: newUser });
@@ -200,13 +194,10 @@ router.post('/login', asyncHandler(async (req, res) => {
   }
 }));
 
-router.put('/remove-available-hour', asyncHandler(async (req, res) => {
+router.put('/remove-available-hour', AsyncHandler(async (req, res) => {
   const { date, hour } = req.body;
-  console.log('remove',date,hour)
-
   try {
     const day = await Day.findOne({ date });
-    console.log('fffffffffffffffffffff')
 
     if (!day) {
       return res.status(404).json({ message: 'Day not found' });
@@ -225,7 +216,7 @@ router.put('/remove-available-hour', asyncHandler(async (req, res) => {
 
 
 // PUT route to remove expired hours based on the current time in Israel
-router.put('/remove-expired-hours', asyncHandler(async (req, res) => {
+router.put('/remove-expired-hours', AsyncHandler(async (req, res) => {
   try {
     const currentDate = new Date();
     const israelOffset = 3 * 60 * 60 * 1000; // Israel Standard Time offset (UTC+3)

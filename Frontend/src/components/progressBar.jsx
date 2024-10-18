@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './progressBar.css';
+import './Style.css';
 import topCover from '../images/top cover.jpg'
 
 

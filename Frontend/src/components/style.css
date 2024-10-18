@@ -3,16 +3,14 @@
   padding:0;
   box-sizing: border-box;
 }
-:root{
-  --primary-color:#C7DCA7;
-  --secondary-color:rgb(103, 106, 213);
-  --max-width:1100px;
+.small-header{
+  font-size: 25px !important;
 }
 .big-header{
-  font-size: 35px !important;
-}
-.small-header{
   font-size: 30px !important;
+}
+.large-header{
+  font-size: 35px !important;
 }
 .default-bg{
   background-color: rgba(196, 196, 196, 0.254) !important;
@@ -134,19 +132,9 @@ section{
   padding: 10px 0;
 
 }
-/* #admin-date-selector #main-header{
-  font-size: 35px;
-} */
-#future-lessons{
-  /* margin: 10px 0px ; */
-}
 #admin-date-selector{
   margin-bottom: 20px;
-  /* border:3px solid green; */
 }
-/* #date-selector-container #main-header{
-  font-size: 35px;
-} */
 .same-row{
   display: flex;
 }
@@ -171,7 +159,7 @@ section{
   padding: 0 0px 10px 0;
   margin-bottom: 20px;
 }
-#next-lessons h1,#next-lessons h3{
+#next-lessons h1,#next-lessons h3, #no-new-lessons{
   margin-right: 15px;
 }
 
@@ -183,7 +171,6 @@ section{
   padding: 0 5px 0 0 ;
   margin: 10px 0 ;
   border-radius: 15px;
-  /* border:3px solid blue; */
 }
 #sunset-img{
   width: 30px;
@@ -222,17 +209,21 @@ section#hour-selector{
   flex-wrap: wrap;
 }
  .back{
+   direction: rtl;
   align-self: self-start;
   cursor: pointer;
   background-color: transparent;
   border:none;
   font-size: 20px;
   padding: 10px 0;
-}
- .back i{
-  margin:5px;
-}
 
+  display: flex;
+  align-items: center;
+  justify-content:flex-start ;
+}
+.back i{
+  margin: 2px 0 0 5px;
+}
 #summary{
   width: 100%;
 }
@@ -280,7 +271,6 @@ section#summary{
 [dir="rtl"] .MuiOutlinedInput-notchedOutline {
   text-align: right ;
 }
-
 section#approve-message{
   margin-top: 50px;
   color:black;
@@ -347,7 +337,6 @@ p{
 #add-lesson-btn{
   margin-left: 10px;
 }
-
 #cancel-remove-hour{
     background-color: rgba(196, 196, 196, 0.254) ;
     margin: 10px;
@@ -358,8 +347,6 @@ p{
 #admin-add-lesson #summary-details {
   margin: 10px 0 0 0;
 }
-
-
 .back-to-home-container {
   width: fit-content;
   overflow: hidden;
@@ -376,13 +363,78 @@ p{
 .back-to-home-btn{
   margin: 5px 12px !important;
   text-wrap: nowrap !important;
+  font-size: 18px !important;
 }
+#progress-bars{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  padding-top: 30px;
+}
+
+.progress-bar-container {
+  width: 20%;
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0px 10px;
+  /* Ensuring the fill starts from the right */
+  direction: rtl;
+  filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
+
+}
+
+.progress-bar-1, 
+.progress-bar-2, 
+.progress-bar-3, 
+.progress-bar-4 {
+  height: 100%;
+  animation: fillAnimation 1.5s ease-out;
+  transform-origin: right; /* Ensures animation starts from the right */
+  filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
+
+}
+
+.progress-bar-1 {
+  background-color: #C7DCA7;
+}
+
+.progress-bar-2 {
+  background-color: #6c6c6c;
+}
+
+.progress-bar-3 {
+  background-color: #FFC5C5;
+}
+
+.progress-bar-4 {
+  background-color: #89B9AD;
+}
+
+#top-img{
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
 @keyframes fillAnimation {
   from {
     width: 0;
   }
   to {
     width: 100%;
+  }
+}
+
+@keyframes drainAnimation {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
   }
 }
 

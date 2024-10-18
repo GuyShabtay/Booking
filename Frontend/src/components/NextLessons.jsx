@@ -59,7 +59,7 @@ const NextLessons = () => {
       ) : (
         <div id='sunset-container'>
           <img id='sunset-img' src={horison} alt="img" />
-          <p>כרגע אין לך שיעורים חדשים באופק</p>
+          <p id='no-new-lessons'>כרגע אין לך שיעורים חדשים באופק</p>
         </div>
       )}
     </div>
