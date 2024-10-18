@@ -15,11 +15,17 @@ const app = express();
 // Middleware to parse JSON and handle CORS
 // app.use(cors());
 app.use(express.json());
-app.use(cors({
+// app.use(cors({
   // origin:["http://localhost:5173"],
-  origin:["https://math-lessons-rl40.onrender.com"],
-  methods:["GET","POST", "PUT", "DELETE"], 
-  credentials: true}))
+  // origin:["https://math-lessons-rl40.onrender.com"],
+  // methods:["GET","POST", "PUT", "DELETE"], 
+  // credentials: true}))
+  // Allow requests from specific origin
+app.use(cors({
+  origin: 'https://math-lessons-rl40.onrender.com'
+}));
+  app.options('*', cors());  // Allow preflight for all routes
+
 
 // Test route to verify server is running
 app.get('/', (req, res) => {
