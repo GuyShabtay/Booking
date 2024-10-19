@@ -392,6 +392,7 @@ p{
 .progress-bar-2, 
 .progress-bar-3, 
 .progress-bar-4 {
+  border-radius: 10px;
   height: 100%;
   animation: fillAnimation 1.5s ease-out;
   transform-origin: right; /* Ensures animation starts from the right */
