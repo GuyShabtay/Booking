@@ -374,30 +374,25 @@ p{
   direction: rtl;
   padding-top: 30px;
 }
-.progress-bar-container::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); /* Add shadow here */
-}
 
 .progress-bar-container {
   width: 20%;
   height: 20px;
   background-color: lightgray;
   border-radius: 10px;
-  margin: 0px 15px; /* Increase margin */
+  /* overflow: hidden; */
+  margin: 0px 10px;
+  /* Ensuring the fill starts from the right */
   direction: rtl;
   filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
+
 }
 
 .progress-bar-1, 
 .progress-bar-2, 
 .progress-bar-3, 
 .progress-bar-4 {
-  border-radius: 10px;
+  z-index: -1;
   height: 100%;
   animation: fillAnimation 1.5s ease-out;
   transform-origin: right; /* Ensures animation starts from the right */
