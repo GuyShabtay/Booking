@@ -147,7 +147,7 @@ section{
   background-color: transparent;
   border:none;
   font-size: 30px;
-  margin: 0 5px;
+  margin: 0 5px 5px 5px;
 }
 #calendar{
   direction:rtl;
@@ -364,6 +364,7 @@ p{
   margin: 5px 12px !important;
   text-wrap: nowrap !important;
   font-size: 18px !important;
+  min-width: max-content !important;
 }
 #progress-bars{
   display: flex;
@@ -383,6 +384,7 @@ p{
   /* Ensuring the fill starts from the right */
   direction: rtl;
   filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
+  z-index: 10;
 
 }
 
