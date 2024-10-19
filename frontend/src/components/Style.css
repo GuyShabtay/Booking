@@ -382,16 +382,16 @@ p{
 }
 
 .progress-bar-container {
+  filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
+  will-change: filter; 
   width: 20%;
   height: 20px;
   background-color: lightgray;
   border-radius: 10px;
-  /* overflow: hidden; */
+  overflow: hidden;
   margin: 0px 10px;
   /* Ensuring the fill starts from the right */
   direction: rtl;
-  filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
-  z-index: 10 !important;
 
 }
 
@@ -399,7 +399,6 @@ p{
 .progress-bar-2, 
 .progress-bar-3, 
 .progress-bar-4 {
-  z-index: -10 !important;
   height: 100%;
   animation: fillAnimation 1.5s ease-out;
   transform-origin: right; /* Ensures animation starts from the right */
@@ -409,22 +408,18 @@ p{
 
 .progress-bar-1 {
   background-color: #C7DCA7;
-  z-index: -10 !important;
 }
 
 .progress-bar-2 {
   background-color: #6c6c6c;
-  z-index: -10 !important;
 }
 
 .progress-bar-3 {
   background-color: #FFC5C5;
-  z-index: -10 !important;
 }
 
 .progress-bar-4 {
   background-color: #89B9AD;
-  z-index: -10 !important;
 }
 
 #top-img{
