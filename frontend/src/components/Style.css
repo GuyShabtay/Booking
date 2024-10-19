@@ -137,6 +137,7 @@ section{
 }
 .same-row{
   display: flex;
+  align-items: center;
 }
 #date-selector-container h1,#admin-date-selector h1{
  color: black;
@@ -147,7 +148,7 @@ section{
   background-color: transparent;
   border:none;
   font-size: 30px;
-  margin: 0 5px 10px 5px;
+  margin: 0 5px;
 }
 #calendar{
   direction:rtl;
