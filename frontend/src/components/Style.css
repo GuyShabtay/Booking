@@ -380,7 +380,7 @@ p{
   height: 20px;
   background-color: lightgray;
   border-radius: 10px;
-  /* overflow: hidden; */
+  overflow: hidden;
   margin: 0px 10px;
   /* Ensuring the fill starts from the right */
   direction: rtl;
