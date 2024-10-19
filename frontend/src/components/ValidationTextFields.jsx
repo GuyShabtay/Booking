@@ -69,7 +69,7 @@ export default function ValidationTextFields({ updateDetails, name, setName, sch
       sx={{ 
         display: 'flex', 
         flexDirection: 'column', 
-        alignItems: 'flex-end', // Align form fields to the right
+        alignItems: 'flex-start', // Align form fields to the right
         alignItems: 'center', 
         justifyContent: 'center', 
         '& > :not(style)': { m: 1, width: '25ch' } 
