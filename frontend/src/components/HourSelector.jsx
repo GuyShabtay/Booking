@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from 'react';
-
 import Summary from './Summary';
 import './Style.css';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import Loader from './Loader'; // Ensure you have the Loader component available
-import { Link, useNavigate,useLocation } from "react-router-dom";
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const HourSelector = () => {
   const [showSummary, setShowSummary] = useState(false);
   const [day, setDay] = useState({ availableHours: [] });
   const [loading, setLoading] = useState(true); // Loading state
-  
 
-  
   const formattedDate = sessionStorage.getItem('formatted-date');
-  const dayName = sessionStorage.getItem('day-name');  
+  const dayName = sessionStorage.getItem('day-name');
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const fetchDay = async () => {
@@ -56,29 +51,39 @@ const HourSelector = () => {
     navigate(-1);
   };
 
+  // Function to sort time strings numerically
+  const sortHours = (hours) => {
+    return hours.sort((a, b) => {
+      const [aHours, aMinutes] = a.split(':').map(Number);
+      const [bHours, bMinutes] = b.split(':').map(Number);
+
+      return aHours - bHours || aMinutes - bMinutes; // Sort by hours first, then by minutes
+    });
+  };
+
   return (
     <section id='hour-selector'>
       {loading ? (
         <Loader /> // Show loader while fetching data
       ) : (
         <>
-          <button className='back' onClick={handleBack} ><i className="fa-solid fa-angle-right"></i>חזרה</button>
+          <button className='back' onClick={handleBack}><i className="fa-solid fa-angle-right"></i>חזרה</button>
           <div className='shadow-box'>
-          <h1 className='dark-color'>בחירת שעה</h1>
-          <p>({dayName}) {formattedDate}</p>
-          <div className='hours-container'>
-            {day.availableHours.length > 0 ? (
-              day.availableHours.map((hour) => (
-                <div key={hour}>
-                  <Button className='default-bg' variant="contained" onClick={() => handleTimeButtonClick(hour)}>
-                    {hour}
-                  </Button>
-                </div>
-              ))
-            ) : (
-              <h3 className='black-color'>אין שיעורים פנויים ביום זה</h3>
-            )}
-          </div>
+            <h1 className='dark-color'>בחירת שעה</h1>
+            <p>({dayName}) {formattedDate}</p>
+            <div className='hours-container' style={{ direction: 'rtl' }}> {/* Ensure direction is RTL */}
+              {day.availableHours.length > 0 ? (
+                sortHours(day.availableHours).map((hour) => (
+                  <div key={hour}>
+                    <Button className='default-bg' variant="contained" onClick={() => handleTimeButtonClick(hour)}>
+                      {hour}
+                    </Button>
+                  </div>
+                ))
+              ) : (
+                <h3 className='black-color'>אין שיעורים פנויים ביום זה</h3>
+              )}
+            </div>
           </div>
         </>
       )}
