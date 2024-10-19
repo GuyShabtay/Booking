@@ -13,6 +13,9 @@ a {
 h1, h2, h3, h4, h5, h6 {
   color: black; /* Ensures headings have consistent color */
 }
+button {
+  color: black; /* Ensures headings have consistent color */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
