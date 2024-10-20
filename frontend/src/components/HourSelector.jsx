@@ -16,6 +16,7 @@ const HourSelector = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchDay = async () => {
       setLoading(true); // Start loading
       try {
