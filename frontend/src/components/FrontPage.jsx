@@ -36,6 +36,7 @@ const FrontPage = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const removeExpiredHours = async () => {
       try {
         await axios.put('https://math-lessons-backend.onrender.com/api/days/remove-expired-hours');

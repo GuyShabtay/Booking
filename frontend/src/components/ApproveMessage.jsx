@@ -14,6 +14,7 @@ const ApproveMessage = () => {
     const hour = sessionStorage.getItem('hour');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     // Trigger confetti when the button is clicked
     confetti({
       particleCount: 100,

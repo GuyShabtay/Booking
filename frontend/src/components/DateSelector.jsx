@@ -24,6 +24,7 @@ const DateSelector = () => {
   const daysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
   
   useEffect(() => {
+    window.scrollTo(0, 0);
     sessionStorage.setItem('progress', 1);
     
     const fetchDays = async () => {

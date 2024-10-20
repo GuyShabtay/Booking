@@ -21,6 +21,7 @@ const AdminDateSelector = () => {
   const daysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
   
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchDays = async () => {
       setLoading(true);
       const { data } = await axios.get(`https://math-lessons-backend.onrender.com/api/days`);
