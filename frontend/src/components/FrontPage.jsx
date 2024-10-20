@@ -2,7 +2,8 @@ import React, { useState,useEffect } from 'react';
 import DateSelector from './DateSelector';
 import ProgressBar from './ProgressBar';
 import './Style.css';
-import profile from '../images/profile.png'; 
+// import profile from '../images/profile.png';
+import profile from '../images/personal image.jpg' 
 import frontPageBg from '../images/front page bg.jpg'
 import Button from '@mui/material/Button';
 import Login from './Login';
