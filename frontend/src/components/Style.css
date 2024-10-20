@@ -309,6 +309,9 @@ p{
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   font-size: 20px;
 }
+#front-page h1{
+  font-size: 40px;
+}
 #tutor {
   width: 95%;
   height: auto;
