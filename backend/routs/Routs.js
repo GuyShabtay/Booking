@@ -218,14 +218,13 @@ router.put('/remove-available-hour', AsyncHandler(async (req, res) => {
 // PUT route to remove expired hours based on the current time in Israel
 router.put('/remove-expired-hours', AsyncHandler(async (req, res) => {
   try {
-    const currentDate = new Date();
-    const israelOffset = 2 * 60 * 60 * 1000; // Israel Standard Time offset (UTC+2)
-    const israelTime = new Date(currentDate.getTime() + israelOffset);
+    // Get current time in Israel (taking into account DST)
+    const israelTime = DateTime.now().setZone('Asia/Jerusalem');
 
     // Current date in YYYY-MM-DD format
-    const currentDateString = israelTime.toISOString().split('T')[0];
+    const currentDateString = israelTime.toISODate();
     // Current time (hours and minutes)
-    const currentTimeString = israelTime.toTimeString().slice(0, 5); // Format: "HH:MM"
+    const currentTimeString = israelTime.toFormat('HH:mm');
 
     // Find all days including and before the current date
     const days = await Day.find({ date: { $lte: currentDateString } });
