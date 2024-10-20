@@ -132,7 +132,7 @@ const AdminHourSelector = () => {
           {showHourOptions && (
             <div className='same-row'>
               <Button onClick={() => { setShowModal(true); setShowHourOptions(false); }} className='remove-bg' variant="contained">מחיקת שיעור</Button>
-              <Button onClick={() => navigate('/admin-add-lesson', { state: { day } })} className='secondary-bg' variant="contained">הוספת שיעור לתלמיד</Button>
+              <Button onClick={() => navigate('/admin-add-lesson', { state: { day } })} id='add-lesson-btn' className='secondary-bg' variant="contained">הוספת שיעור לתלמיד</Button>
             </div>
           )}
 

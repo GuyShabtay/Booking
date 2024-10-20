@@ -46,20 +46,14 @@ const FrontPage = () => {
   
 
   return (
-    <div id='main-container'>
-    
-        <section id='front-page'>
-        <div id='img-bg'>
+    <section id='front-page'>
         <img id='personal-img' src={profile} alt="img" />
-
-        <h1>יובל שבתאי - מורה פרטית למתמטיקה</h1>
-        </div>
-        <div id='background'>
+        <img id='tutor' src={tutor} alt="img" />
+        {/* <h1>יובל שבתאי - מורה פרטית למתמטיקה</h1> */}
+        <Button id='schedule' className='default-bg' variant="contained" onClick={handleSetLesson}>קביעת שיעור</Button>
         <img id='bg' src={frontPageBg} alt="img" />
-          <Button id='schedule' className='default-bg' variant="contained" onClick={handleSetLesson}>קביעת שיעור</Button>
-          </div>
+        <div id='img-bg'></div>
         </section>
-    </div>
   );
 };
 

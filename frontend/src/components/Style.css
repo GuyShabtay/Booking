@@ -298,22 +298,25 @@ p{
 }
 #img-bg {
   width: 100%;
-  height: 75vh;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  color: white;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  position: fixed;
   background: linear-gradient(to top, rgba(137, 185, 173, 0), #C7DCA7);
+  z-index: -1;
+}
+#front-page{
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   font-size: 20px;
+  
+}
+#tutor {
+  width: 95%;
+  height: auto;
 }
 #schedule{
-  padding: 10px 30px;
-  font-size: 30px;
+  padding: 8px 20px;
+  font-size: 20px;
+  margin-top: 150px;
 }
 #bg{
   width:100%;
@@ -321,14 +324,13 @@ p{
   bottom:0;
   left: 0;
   position: fixed;
-  z-index: -1;
+  z-index: -2;
 }
 #personal-img{
   width:200px;
   height: auto;
   border-radius: 35px;
-  margin-bottom: 40px;
-  margin-top: 75px;
+  margin: 30px 0 40px 0;
 }
 .available-day{
   color: white !important;
