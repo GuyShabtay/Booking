@@ -219,7 +219,7 @@ router.put('/remove-available-hour', AsyncHandler(async (req, res) => {
 router.put('/remove-expired-hours', AsyncHandler(async (req, res) => {
   try {
     const currentDate = new Date();
-    const israelOffset = 3 * 60 * 60 * 1000; // Israel Standard Time offset (UTC+3)
+    const israelOffset = 2 * 60 * 60 * 1000; // Israel Standard Time offset (UTC+2)
     const israelTime = new Date(currentDate.getTime() + israelOffset);
 
     // Current date in YYYY-MM-DD format
