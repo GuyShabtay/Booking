@@ -35,17 +35,17 @@ const FrontPage = () => {
       navigate('/login');
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    const removeExpiredHours = async () => {
-      try {
-        await axios.put('https://math-lessons-backend.onrender.com/api/days/remove-expired-hours');
-      } catch (error) {
-        console.error('Error removing expired hours:', error);
-      }
-    };
-    removeExpiredHours()
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   const removeExpiredHours = async () => {
+  //     try {
+  //       await axios.put('https://math-lessons-backend.onrender.com/api/days/remove-expired-hours');
+  //     } catch (error) {
+  //       console.error('Error removing expired hours:', error);
+  //     }
+  //   };
+  //   removeExpiredHours();
+  // }, []);
 
   
 

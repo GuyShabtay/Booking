@@ -2,6 +2,8 @@ import express from 'express';
 import AsyncHandler from '../middleware/AsyncHandler.js';
 import Day from '../models/dayModel.js';
 import User from '../models/UserModel.js';
+import { DateTime } from 'luxon';
+
 
 
 const router = express.Router();
@@ -216,17 +218,20 @@ router.put('/remove-available-hour', AsyncHandler(async (req, res) => {
 
 
 // PUT route to remove expired hours based on the current time in Israel
-router.put('/remove-expired-hours', AsyncHandler(async (req, res) => {
+router.put('/remove-expired-hours', asyncHandler(async (req, res) => {
   try {
     // Get current time in Israel (taking into account DST)
     const israelTime = DateTime.now().setZone('Asia/Jerusalem');
 
-    // Current date in YYYY-MM-DD format
-    const currentDateString = israelTime.toISODate();
+    // Format the current date in DD/MM/YY format (matching the format in your database)
+    const currentDateString = israelTime.toFormat('dd/LL/yy');
+    console.log('currentDateString', currentDateString);
+
     // Current time (hours and minutes)
     const currentTimeString = israelTime.toFormat('HH:mm');
+    console.log('currentTimeString', currentTimeString);
 
-    // Find all days including and before the current date
+    // Find all days including and before the current date (formatted as DD/MM/YY)
     const days = await Day.find({ date: { $lte: currentDateString } });
 
     for (const day of days) {

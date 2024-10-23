@@ -35,13 +35,14 @@ const AdminHourSelector = () => {
   };
 
   const handleAddHour = async (e) => {
+    e.preventDefault(); // Prevent form submission default behavior
     if (newHour) {
       setLoading(true); // Start loading while adding hour
       try {
         const { data } = await axios.get(`https://math-lessons-backend.onrender.com/api/days/findDay`, {
           params: { date: formattedDate }
         });
-
+  
         if (data) {
           const updatedHours = [...data.availableHours, newHour];
           await axios.put(`https://math-lessons-backend.onrender.com/api/days`, { availableHours: updatedHours, date: formattedDate });
@@ -55,9 +56,11 @@ const AdminHourSelector = () => {
       } finally {
         await fetchDay(); // Refresh the day's data after adding/updating
         setLoading(false); // End loading
+        setNewHour(''); // Clear the input field after adding the new hour
       }
     }
   };
+  
 
   // Fetch day data
   const fetchDay = async () => {
