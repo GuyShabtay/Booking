@@ -9,7 +9,6 @@ import Button from '@mui/material/Button';
 import Login from './Login';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import tutor from '../images/tutor.png'
 
 
 
@@ -52,7 +51,6 @@ const FrontPage = () => {
   return (
     <section id='front-page'>
         <img id='personal-img' src={profile} alt="img" />
-        {/* <img id='tutor' src={tutor} alt="img" /> */}
         <h1 className='large-header'>יובל שבתאי - מורה פרטית למתמטיקה</h1>
         <Button id='schedule' className='default-bg' variant="contained" onClick={handleSetLesson}>קביעת שיעור</Button>
         <img id='bg' src={frontPageBg} alt="img" />

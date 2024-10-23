@@ -218,7 +218,7 @@ router.put('/remove-available-hour', AsyncHandler(async (req, res) => {
 
 
 // PUT route to remove expired hours based on the current time in Israel
-router.put('/remove-expired-hours', asyncHandler(async (req, res) => {
+router.put('/remove-expired-hours', AsyncHandler(async (req, res) => {
   try {
     // Get current time in Israel (taking into account DST)
     const israelTime = DateTime.now().setZone('Asia/Jerusalem');
