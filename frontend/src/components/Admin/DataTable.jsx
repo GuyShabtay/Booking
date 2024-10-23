@@ -147,7 +147,7 @@ const handleSelectionChange = (selectionModel) => {
           border: 0,
           direction: 'rtl',
           '& .MuiDataGrid-columnHeaders': {
-            borderRadius: '0',
+            borderRadius: '20px',
           },
           '& .MuiDataGrid-cell': {
             whiteSpace: 'normal',  // Allow text to wrap
