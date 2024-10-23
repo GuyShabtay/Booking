@@ -178,6 +178,7 @@ border-bottom-right-radius: 25px ;
   background-color: rgba(196, 196, 196, 0.254) ;
   color: white;
   align-self: center;
+  margin-top: 20px;
 }
  #login-img{
    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)); 
@@ -309,11 +310,12 @@ border-bottom-right-radius: 25px ;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 30px 0;
+  margin: 5px 0;
 }
 #confirm-summary{
   padding: 5px 25px;
   font-size: 18px;
+  margin-top: 10px;
 }
 
 /* Approve Message */
@@ -427,9 +429,7 @@ border-bottom-right-radius: 25px ;
 #admin-add-lesson h1{
   font-size: 30px;
 }
-#admin-add-lesson #summary-details {
-  margin: 10px 0 0 0;
-}
+
 
 
 
