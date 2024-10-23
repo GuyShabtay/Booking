@@ -47,7 +47,7 @@ const ApproveMessage = () => {
         <p>{formattedDate} בתאריך </p>
       </div>
       <p> {hour} בשעה</p>
-      <h1>!! בהצלחה</h1>
+      <h1 className='big-header'>!! בהצלחה</h1>
       <div className='back-to-home-container secondary-bg'>
         <div className='back-to-home'>
         <Button className='back-to-home-btn' color='white' onClick={handleBackToHome}>חזרה לדף הבית</Button>

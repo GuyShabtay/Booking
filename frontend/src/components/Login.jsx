@@ -32,10 +32,10 @@ const Login = () => {
   };
 
   return (
-    <div id='login'>
+    <section id='login'>
       <img id='login-cover-img' src={loginTopCover} alt="cover" />
       <h1 className='dark-color'>התחברות</h1>
-      <div id="login-form">
+      <div id="login-form" className='shadow-box'>
         <img id='login-img' src={account} alt="profile" />
         <ValidationTextFields
           updateDetails={updateDetails}
@@ -45,7 +45,7 @@ const Login = () => {
           setSchool={setSchool}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,7 +1,75 @@
+/* General */
+
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
+}
+body{
+  background-color: #f6f6f6;
+}
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.shadow-box{
+  display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 95%;
+  padding: 30px 10px;
+}
+button {
+  padding: 5px 10px; 
+  margin: 15px; 
+  border: none; 
+  background-color: rgba(196, 196, 196, 0.254);
+  border-radius: 8px;
+  cursor: pointer;
+}
+p{
+  padding: 3px;
+}
+.same-row{
+  display: flex;
+  align-items: center;
+}
+.back{
+  direction: rtl;
+ align-self: self-start;
+ cursor: pointer;
+ background-color: transparent;
+ border:none;
+ font-size: 20px;
+ padding: 10px 0;
+ display: flex;
+ align-items: center;
+ justify-content:flex-start ;
+}
+.back i{
+ margin: 2px 0 0 5px;
+}
+[dir="rtl"] .MuiFormLabel-root{
+  left: auto;
+  right: auto;
+  transform-origin: top right;
+  text-align: right;
+  margin-right: 25px;
+}
+[dir="rtl"] .MuiOutlinedInput-notchedOutline {
+  text-align: right ;
+}
+.MuiTextField-root {
+  margin: 10px 0; /* Adjust to your desired spacing */
+  width: 100%; /* Ensure full width usage */
 }
 .small-header{
   font-size: 25px !important;
@@ -50,23 +118,47 @@
   color: black !important;
 }
 
+/* Front Page */
 
-body{
-  background-color: #f6f6f6;
+#front-page{
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
 }
-#main-container{
-  display: flex; 
-   flex-direction: column; 
-  align-items: center; 
-   justify-content: center;
+#profile-img{
+  width:200px;
+  height: auto;
+  border-radius: 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 30px 0 10px 0;
 }
+#schedule{
+  padding: 10px 25px;
+  font-size: 25px;
+  margin-top: 130px;
+}
+#linear-gradient-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(to top, rgba(137, 185, 173, 0), #C7DCA7);
+  z-index: -1;
+}
+
+#front-page-bg{
+  width:100%;
+  height: auto;
+  bottom:0;
+  left: 0;
+  position: fixed;
+  z-index: -2;
+}
+
+/* Login */
 
  #login{
   width:100%;
 height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
  }
  #login-cover-img{
@@ -80,14 +172,8 @@ border-bottom-right-radius: 25px ;
   margin: 10px 0 ;
  }
  #login-form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 90%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-border-radius: 20px;
-min-height: 370px;
+/* min-height: 370px; */
  }
  #confirm-login{
   background-color: rgba(196, 196, 196, 0.254) ;
@@ -100,102 +186,108 @@ min-height: 370px;
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
-
  }
-td button {
-  width: 40px; 
-  height: 40px; 
-  padding: 10px; 
-  margin: 5px; 
-  border: none; 
-  background-color: rgba(196, 196, 196, 0.254);
-  border-radius: 50%;
-  cursor: pointer;
-}
-td button:focus,#schedule:focus {
-  background-color: #C7DCA7; 
-  color: white; 
-}
 
-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+/* Date Selector */
+
 #date-selector{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-bottom: 10px;  
 }
 #date-selector-container,#admin-date-selector-container{
   margin-bottom: 20px;
   padding: 10px 0;
-
-}
-#admin-date-selector{
-  margin-bottom: 20px;
-}
-.same-row{
-  display: flex;
-  align-items: center;
 }
 #date-selector-container h1,#admin-date-selector h1{
- color: black;
- font-size: 25px;
-}
-.months-arrow{
-  cursor: pointer;
-  background-color: transparent;
-  border:none;
-  font-size: 30px;
-  margin: 5px 5px 0 5px;
-}
-#calendar{
-  direction:rtl;
-}
-#next-lessons{
-  background-color: white;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 0 0px 10px 0;
-  margin-bottom: 20px;
-}
-#next-lessons h1,#next-lessons h3, #no-new-lessons{
-  margin-right: 15px;
-}
-
-#next-lessons-container{
-  min-width:95%;
-  text-align: end;
-}
-.shadow-box.lesson{
-  padding: 0 5px 0 0 ;
-  margin: 10px 0 ;
-  border-radius: 15px;
-}
-#sunset-img{
-  width: 30px;
-  height: 30px;
-  margin: 0 2px;
-}
-#sunset-container{
+  color: black;
+  font-size: 25px;
+ }
+ .months-arrow{
+   cursor: pointer;
+   background-color: transparent;
+   border:none;
+   font-size: 30px;
+   margin: 5px 5px 0 5px;
+ }
+ #calendar{
+   direction:rtl;
+ }
+ td button {
+   width: 40px; 
+   height: 40px; 
+   padding: 10px; 
+   margin: 5px; 
+   border: none; 
+   background-color: rgba(196, 196, 196, 0.254);
+   border-radius: 50%;
+   cursor: pointer;
+ }
+ td button:focus,#schedule:focus {
+   background-color: #C7DCA7; 
+   color: white; 
+ }
+ #next-lessons{
+   background-color: white;
+   align-items: flex-end;
+   justify-content: flex-end;
+   padding: 0 0px 10px 0;
+   margin-bottom: 20px;
+ }
+ #next-lessons h1,#next-lessons h3, #no-new-lessons{
+   margin-right: 15px;
+ }
+ #next-lessons-container{
+   min-width:95%;
+   text-align: end;
+ }
+ #lesson-details{
+  align-self: flex-end;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 15px 0;
 }
-#lesson-gif{
-  width: 60px;
-  height: auto;
-  align-self: center;
-  margin-top: 5px;
+ .shadow-box.lesson{
+   padding: 0 5px 0 0 ;
+   margin: 10px 0 ;
+   border-radius: 15px;
+ }
+ #sunset-img{
+   width: 30px;
+   height: 30px;
+   margin: 0 2px;
+ }
+ #sunset-container{
+   display: flex;
+ }
+ #lesson-gif{
+   width: 60px;
+   height: auto;
+   align-self: center;
+   margin-top: 5px;
+   }
+  .available-day{
+    color: white !important;
   }
-section#hour-selector h1{
-  font-size: 35px;
-}
-section#hour-selector{
+  #logout-btn{
+    align-self: flex-start;
+    margin: 20px 0px 20px 10px;
+  }
+
+
+/* Hour Selector */
+
+#hour-selector{
   color:black;
   width: 100%;
+}
+#hour-selector h1{
+  font-size: 35px;
+}
+.hours-container {
+  margin: 10px 20px 10px 20px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .hours-container button {
   padding: 10px 15px; 
@@ -206,30 +298,13 @@ section#hour-selector{
   cursor: pointer;
   font-size: 20px;
 }
-.hours-container {
-  margin: 10px 20px 10px 20px; 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
- .back{
-   direction: rtl;
-  align-self: self-start;
-  cursor: pointer;
-  background-color: transparent;
-  border:none;
-  font-size: 20px;
-  padding: 10px 0;
 
-  display: flex;
-  align-items: center;
-  justify-content:flex-start ;
-}
-.back i{
-  margin: 2px 0 0 5px;
-}
+/* Summary */
+
 #summary{
   width: 100%;
+  /* color: black; */
+  font-size: 20px;
 }
 #summary-details{
   align-self: flex-end;
@@ -238,120 +313,20 @@ section#hour-selector{
   align-items: flex-end;
   margin: 30px 0;
 }
-#lesson-details{
-  align-self: flex-end;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin: 15px 0;
-}
-section#summary{
-  color: black;
-  font-size: 20px;
-}
 #confirm-summary{
   padding: 5px 25px;
   font-size: 18px;
 }
-.shadow-box{
-  display: flex;
-   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 20px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  width: 95%;
-  padding: 30px 10px;
-}
-[dir="rtl"] .MuiFormLabel-root{
-  left: auto;
-  right: auto;
-  transform-origin: top right;
-  text-align: right;
-  margin-right: 25px;
-}
-[dir="rtl"] .MuiOutlinedInput-notchedOutline {
-  text-align: right ;
-}
-section#approve-message{
+
+/* Approve Message */
+
+#approve-message{
   margin-top: 50px;
-  color:black;
+  /* color:black; */
   font-size: 20px;
 }
-section#approve-message h1{
-  font-size: 30px;
-}
-section#approve-message i{
+#approve-message i{
   margin-bottom: 20px;
-}
-button {
-  padding: 5px 10px; 
-  margin: 15px; 
-  border: none; 
-  background-color: rgba(196, 196, 196, 0.254);
-  border-radius: 8px;
-  cursor: pointer;
-}
-p{
-  padding: 3px;
-}
-#img-bg {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background: linear-gradient(to top, rgba(137, 185, 173, 0), #C7DCA7);
-  z-index: -1;
-}
-#front-page{
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  font-size: 20px;
-}
-#tutor {
-  width: 95%;
-  height: auto;
-}
-#schedule{
-  padding: 10px 25px;
-  font-size: 25px;
-  margin-top: 130px;
-}
-#bg{
-  width:100%;
-  height: auto;
-  bottom:0;
-  left: 0;
-  position: fixed;
-  z-index: -2;
-}
-#personal-img{
-  width:200px;
-  height: auto;
-  border-radius: 35px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  margin: 30px 0 10px 0;
-}
-.available-day{
-  color: white !important;
-}
-#logout-btn{
-  align-self: flex-start;
-  margin: 20px 0px 20px 10px;
-}
-#add-lesson-btn{
-  margin-left: 10px;
-}
-#cancel-remove-hour{
-    background-color: rgba(196, 196, 196, 0.254) ;
-    margin: 10px;
-}
-#admin-add-lesson h1{
-  font-size: 30px;
-}
-#admin-add-lesson #summary-details {
-  margin: 10px 0 0 0;
 }
 .back-to-home-container {
   width: fit-content;
@@ -372,10 +347,9 @@ p{
   font-size: 18px !important;
   min-width: max-content !important;
 }
-.MuiTextField-root {
-  margin: 10px 0; /* Adjust to your desired spacing */
-  width: 100%; /* Ensure full width usage */
-}
+
+/* Progress Bar */
+
 #progress-bars{
   display: flex;
   justify-content: center;
@@ -383,7 +357,6 @@ p{
   direction: rtl;
   padding-top: 30px;
 }
-
 .progress-bar-container {
   filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
   will-change: filter; 
@@ -393,11 +366,8 @@ p{
   border-radius: 10px;
   overflow: hidden;
   margin: 0px 10px;
-  /* Ensuring the fill starts from the right */
   direction: rtl;
-
 }
-
 .progress-bar-1, 
 .progress-bar-2, 
 .progress-bar-3, 
@@ -406,32 +376,25 @@ p{
   animation: fillAnimation 1.5s ease-out;
   transform-origin: right; /* Ensures animation starts from the right */
   filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
-
 }
-
 .progress-bar-1 {
   background-color: #C7DCA7;
 }
-
 .progress-bar-2 {
   background-color: #6c6c6c;
 }
-
 .progress-bar-3 {
   background-color: #FFC5C5;
 }
-
 .progress-bar-4 {
   background-color: #89B9AD;
 }
-
-#top-img{
+#top-cover{
   width: 100%;
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
-
 @keyframes fillAnimation {
   from {
     width: 0;
@@ -440,7 +403,6 @@ p{
     width: 100%;
   }
 }
-
 @keyframes drainAnimation {
   from {
     width: 100%;
@@ -448,6 +410,27 @@ p{
   to {
     width: 0%;
   }
+}
+
+/* Admin Date Selector */
+
+#admin-date-selector{
+  margin-bottom: 20px;
+}
+#add-lesson-btn{
+  margin-left: 10px;
+}
+#cancel-remove-hour{
+    background-color: rgba(196, 196, 196, 0.254) ;
+    margin: 10px;
+}
+
+/* Admin Add Lesson */
+#admin-add-lesson h1{
+  font-size: 30px;
+}
+#admin-add-lesson #summary-details {
+  margin: 10px 0 0 0;
 }
 
 

@@ -98,7 +98,7 @@ const DateSelector = () => {
   }
 
   return (
-    <div id='date-selector'>
+    <section id='date-selector'>
     {loading ? (
       <Loader /> // Show loader while fetching or adding data
     ) : (
@@ -156,7 +156,7 @@ const DateSelector = () => {
 </div>
 </>
 )}
-</div>
+</section>
 );
 };
 

@@ -33,7 +33,7 @@ useEffect(() => {
 
   return (
     <div id='progress-bar'>    
-    <img id='top-img' src={topCover} alt="img" />
+    <img id='top-cover' src={topCover} alt="img" />
 
     <div id='progress-bars'>
       <div className='progress-bar-container'>

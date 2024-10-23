@@ -2,8 +2,7 @@ import React, { useState,useEffect } from 'react';
 import DateSelector from './DateSelector';
 import ProgressBar from './ProgressBar';
 import './Style.css';
-// import profile from '../images/profile.png';
-import profile from '../images/personal image.jpg' 
+import profileImg from '../images/profile image.jpg' 
 import frontPageBg from '../images/front page bg.jpg'
 import Button from '@mui/material/Button';
 import Login from './Login';
@@ -50,11 +49,11 @@ const FrontPage = () => {
 
   return (
     <section id='front-page'>
-        <img id='personal-img' src={profile} alt="img" />
+        <img id='profile-img' src={profileImg} alt="img" />
         <h1 className='large-header'>יובל שבתאי - מורה פרטית למתמטיקה</h1>
         <Button id='schedule' className='default-bg' variant="contained" onClick={handleSetLesson}>קביעת שיעור</Button>
-        <img id='bg' src={frontPageBg} alt="img" />
-        <div id='img-bg'></div>
+        <img id='front-page-bg' src={frontPageBg} alt="img" />
+        <div id='linear-gradient-bg'></div>
         </section>
   );
 };

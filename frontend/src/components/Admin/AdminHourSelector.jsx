@@ -108,7 +108,7 @@ const AdminHourSelector = () => {
 
   return (
     <section id='admin-hour-selector'>
-      <img id='top-img' src={topCover} alt="img" />
+      <img id='top-cover' src={topCover} alt="img" />
       {loading ? (
         <Loader />
       ) : (

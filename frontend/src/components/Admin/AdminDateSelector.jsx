@@ -98,7 +98,7 @@ const AdminDateSelector = () => {
 
   return (
     <section id='admin-date-selector' className='primary-color'>
-    <img id='top-img' src={topCover} alt="img" />
+    <img id='top-cover' src={topCover} alt="img" />
     {loading ? (
       <Loader /> // Show loader while fetching or adding data
     ) : (

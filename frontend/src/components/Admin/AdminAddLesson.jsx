@@ -69,7 +69,7 @@ const AdminAddLesson = () => {
 
   return (
     <section id='admin-add-lesson'>
-    <img id='top-img' src={topCover} alt="img" />
+    <img id='top-cover' src={topCover} alt="img" />
 
       <button className='back' onClick={handleBack}><i className="fa-solid fa-angle-right"></i>חזרה</button>
       <div className='shadow-box'>

@@ -225,11 +225,9 @@ router.put('/remove-expired-hours', AsyncHandler(async (req, res) => {
 
     // Format the current date in DD/MM/YY format (matching the format in your database)
     const currentDateString = israelTime.toFormat('dd/LL/yy');
-    console.log('currentDateString', currentDateString);
 
     // Current time (hours and minutes)
     const currentTimeString = israelTime.toFormat('HH:mm');
-    console.log('currentTimeString', currentTimeString);
 
     // Find all days including and before the current date (formatted as DD/MM/YY)
     const days = await Day.find({ date: { $lte: currentDateString } });
