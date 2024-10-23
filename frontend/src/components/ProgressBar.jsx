@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Style.css';
 import topCover from '../images/top cover.jpg'
 
-
 const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
@@ -12,8 +11,6 @@ const ProgressBar = () => {
       setProgress(parseInt(savedProgress)); // Update the state with the saved value
     }
   }, []);
-
-
 
  // Listen for sessionStorage changes in the same tab
  const handleStorageChange = () => {
@@ -34,7 +31,6 @@ useEffect(() => {
   return (
     <div id='progress-bar'>    
     <img id='top-cover' src={topCover} alt="img" />
-
     <div id='progress-bars'>
       <div className='progress-bar-container'>
         <div className={`progress-bar-1`}></div>

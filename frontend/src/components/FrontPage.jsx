@@ -1,23 +1,12 @@
-import React, { useState,useEffect } from 'react';
-import DateSelector from './DateSelector';
-import ProgressBar from './ProgressBar';
+import React from 'react';
 import './Style.css';
 import profileImg from '../images/profile image.jpg' 
 import frontPageBg from '../images/front page bg.jpg'
 import Button from '@mui/material/Button';
-import Login from './Login';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-
-
-
-
-
 
 const FrontPage = () => {
-  // const [showDateSelector, setShowDateSelector] = useState(false);
   const navigate = useNavigate();
-
 
   const handleSetLesson = () => {
     const storedName = localStorage.getItem('name'); // Or use localStorage if you prefer persistence across sessions
@@ -32,20 +21,6 @@ const FrontPage = () => {
     else
       navigate('/login');
   };
-
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  //   const removeExpiredHours = async () => {
-  //     try {
-  //       await axios.put('https://math-lessons-backend.onrender.com/api/days/remove-expired-hours');
-  //     } catch (error) {
-  //       console.error('Error removing expired hours:', error);
-  //     }
-  //   };
-  //   removeExpiredHours();
-  // }, []);
-
-  
 
   return (
     <section id='front-page'>

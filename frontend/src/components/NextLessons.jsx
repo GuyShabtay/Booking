@@ -7,14 +7,10 @@ import schoolBoard from '../images/school board.gif';
 const NextLessons = () => {
   const [takenLessons, setTakenLessons] = useState([]); // Store the user's taken lessons
   const [loading, setLoading] = useState(true); // Loading state
-
   const storedName = localStorage.getItem('name');
   const storedSchool = localStorage.getItem('school');
 
   useEffect(() => {
-    // Fetch taken hours and filter by user name
-    // setLoading(true); // Start loading
-
     if (storedName && storedSchool) {
       axios.get('https://math-lessons-backend.onrender.com/api/days/taken-hours')
         .then((response) => {
@@ -26,14 +22,11 @@ const NextLessons = () => {
           console.error('Error fetching taken hours:', error);
         });
     }
-
   }, []);
 
   return (
     <>
-    {!loading && (
-    
-      
+    {!loading && ( 
     <div id='next-lessons' className='shadow-box'>
     {takenLessons.length > 0 && 
     <img id='lesson-gif' src={schoolBoard} alt="img" />}
@@ -41,7 +34,6 @@ const NextLessons = () => {
       {takenLessons.length > 0 ? (
         <div id='next-lessons-container'>
           <h3>:השיעורים הבאים שלך</h3>
-         
           <div >
             {takenLessons.map((lesson, index) => (
               <div key={index} className='shadow-box lesson primary-bg'>

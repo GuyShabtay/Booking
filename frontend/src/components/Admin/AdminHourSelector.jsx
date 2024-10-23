@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { format } from 'date-fns';
-import { he } from 'date-fns/locale';
-import Summary from '../Summary';
 import '../Style.css';
 import axios from 'axios';
 import Button from '@mui/material/Button';
-import Loader from '../Loader'; // Ensure you have the Loader component available
+import Loader from '../Loader'; 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import topCover from '../../images/top cover.jpg';
 import DataTable from './DataTable';
 import RemoveHourModal from './RemoveHourModal';
@@ -23,7 +20,6 @@ const AdminHourSelector = () => {
   const formattedDate = sessionStorage.getItem('formatted-date');
   const dayName = sessionStorage.getItem('day-name');
   const navigate = useNavigate();
-  const location = useLocation();
 
   // Function to sort time strings numerically
   const sortHours = (hours) => {
@@ -48,7 +44,7 @@ const AdminHourSelector = () => {
           await axios.put(`https://math-lessons-backend.onrender.com/api/days`, { availableHours: updatedHours, date: formattedDate });
         } 
       } catch (error) {
-        await axios.post(`https://math-lessons-backend.onrender.com/api/days/add`, {
+        await axios.post(`https://math-lessons-backend.onrender.com/api/days/addDay`, {
           date: formattedDate,
           dayName,
           availableHours: [newHour]
@@ -61,7 +57,6 @@ const AdminHourSelector = () => {
     }
   };
   
-
   // Fetch day data
   const fetchDay = async () => {
     setLoading(true);
@@ -119,7 +114,7 @@ const AdminHourSelector = () => {
           <DataTable formattedDate={formattedDate} className="data-table" />
           
           <h1 className='secondary-color'>שעות פנויות</h1>
-          <div className='hours-container' style={{ direction: 'rtl' }}> {/* Ensure right-to-left layout */}
+          <div className='hours-container' style={{ direction: 'rtl' }}> 
             {day.availableHours.length > 0 ? (
               sortHours(day.availableHours).map((hour) => (
                 <div key={hour}>
@@ -159,7 +154,6 @@ const AdminHourSelector = () => {
             />
             <Button type="submit" className='secondary-bg' variant="contained">אישור</Button>
           </Box>
-
           {showModal && (
             <RemoveHourModal
               selectedHour={selectedHour}

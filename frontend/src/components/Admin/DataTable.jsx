@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button'; // Import Button for removal action
+import Button from '@mui/material/Button'; 
 import axios from 'axios';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import rtlPlugin from 'stylis-plugin-rtl';
@@ -9,8 +9,6 @@ import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import '../Style.css';
 import RemoveHourModal from './RemoveHourModal';
-
-
 
 // Define RTL cache
 const cacheRtl = createCache({
@@ -80,7 +78,6 @@ const fetchFilteredHours = async () => {
   }
 };
 
-
   useEffect(() => {
     if(formattedDate)
       fetchFilteredHours();
@@ -103,7 +100,6 @@ const handleSelectionChange = (selectionModel) => {
 
   // Handle removal of selected hours
   const handleRemoveHour = async () => {
-
     const hoursToRemove = selectedRows.map(rowId => {
       const row = rows.find(row => row.id === rowId);
       return { date: row.date, hour: row.hour, name: row.name, school: row.school };
@@ -130,7 +126,6 @@ const handleSelectionChange = (selectionModel) => {
 
   return (
     <CacheProvider value={cacheRtl}>
-    
       <ThemeProvider theme={theme}>
         <Paper
           sx={{
@@ -163,11 +158,7 @@ const handleSelectionChange = (selectionModel) => {
         onRowSelectionModelChange={(newSelection) => handleSelectionChange(newSelection)}
         selectionModel={selectedRows}
       />
-      
-
         </Paper>
-
-        {/* Show Remove button when one or more rows are selected */}
         {selectedRows.length > 0 && (
           <Button variant="contained" className='remove-bg' onClick={handleHourButtonClick} sx={{ mt: 2 }}>
             מחיקת שיעור

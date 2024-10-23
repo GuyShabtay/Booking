@@ -5,13 +5,11 @@ import axios from 'axios';
 import './Style.css';
 
 const Summary = () => {
-  const [showApproveMessage, setShowApproveMessage] = useState(false);
-
   const formattedDate = sessionStorage.getItem('formatted-date');
   const dayName = sessionStorage.getItem('day-name');
   const hour = sessionStorage.getItem('hour');
-  const name = localStorage.getItem('name'); // Assuming you have these in sessionStorage
-  const school = localStorage.getItem('school'); // Assuming you have these in sessionStorage
+  const name = localStorage.getItem('name'); 
+  const school = localStorage.getItem('school');
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -23,13 +21,12 @@ const Summary = () => {
   const handleConfirmSummary = async () => {
     try {
       // Send the required data to the backend
-      const response = await axios.put('https://math-lessons-backend.onrender.com/api/days/update', {
+      const response = await axios.put('https://math-lessons-backend.onrender.com/api/days/addTakenHour', {
         date: formattedDate,
         hour,
         name,
         school
       });
-
       if (response.status === 200) {
         sessionStorage.setItem('progress', 4);
         navigate('/approve-message');

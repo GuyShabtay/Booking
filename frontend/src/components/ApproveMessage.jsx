@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 
 
 const ApproveMessage = () => {
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate(); 
 
   const formattedDate = sessionStorage.getItem('formatted-date');
@@ -22,7 +21,6 @@ const ApproveMessage = () => {
       origin: { y: 0.6 },
     });
 
-
     // Navigate to home after a delay
     setTimeout(() => {
       handleBackToHome()
@@ -32,11 +30,7 @@ const ApproveMessage = () => {
   const handleBackToHome = () => {
     sessionStorage.setItem('progress', 1);
     navigate('/date-selector');     
-    
   };
-
-
-  
 
   return (
     <section id='approve-message'>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import ValidationTextFields from './ValidationTextFields';
 import account from '../images/account.png'; 
@@ -6,13 +6,12 @@ import loginTopCover from '../images/login top cover.jpg';
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [name, setName] = useState('');  // Store user name input
-  const [school, setSchool] = useState('');  // Store user school input
+  const [name, setName] = useState('');  
+  const [school, setSchool] = useState('');  
   const navigate = useNavigate();
 
   // Event handler for form submission
   const updateDetails = async (e) => {
-    // e.preventDefault();
     try {
       // Call the backend API to check login or register user
       const response = await axios.post('https://math-lessons-backend.onrender.com/api/days/login', { name, school });

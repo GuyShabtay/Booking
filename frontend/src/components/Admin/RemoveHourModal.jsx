@@ -11,11 +11,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
 };
 export default function RemoveHourModal({selectedHour,selectedDate,showModal,setShowModal,handleRemoveHour}) {
-  const handleOpen = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
-
-
-  
 
   return (
     <div id='remove-hour-modal'>

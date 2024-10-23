@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import '../Style.css';
-import AdminHourSelector from './AdminHourSelector';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { he } from 'date-fns/locale';
 import topCover from '../../images/top cover.jpg';
 import DataTable from './DataTable';
 import Button from '@mui/material/Button';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loader from '../Loader';
 
 
 const AdminDateSelector = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(null);
   const [showHourSelector, setShowHourSelector] = useState(false);
   const [availableDays, setAvailableDays] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -29,8 +27,6 @@ const AdminDateSelector = () => {
       const availableDaysArray = daysWithAvailableHours.map(day => day.date);
       setAvailableDays(availableDaysArray);
       setLoading(false);
-
-
     };
 
     const removeExpiredHours = async () => {
@@ -41,7 +37,6 @@ const AdminDateSelector = () => {
       }
     };
     removeExpiredHours();
-
     fetchDays();
   }, []);
 
@@ -50,19 +45,14 @@ const AdminDateSelector = () => {
     const startingDayIndex = firstDay.getDay(); // 0 for Sunday, 1 for Monday, etc.
     const totalDays = daysInMonth(currentDate);
     const dates = [];
-
-    
-
     // Add empty cells for days before the start of the month
     for (let i = 0; i < startingDayIndex; i++) {
       dates.push(null);
     }
-
     // Add days of the month
     for (let i = 1; i <= totalDays; i++) {
       dates.push(new Date(currentDate.getFullYear(), currentDate.getMonth(), i));
     }
-
     return dates;
   };
 
@@ -78,14 +68,7 @@ const AdminDateSelector = () => {
     sessionStorage.setItem('formatted-date',format(date, 'dd/MM/yy', { locale: he }));
     sessionStorage.setItem('day-name',format(date, 'EEEE', { locale: he }));
     navigate('/admin-hour-selector');
-
   };
-
-
-  const handleBack = () => {
-    setShowHourSelector(false); 
-  };
-
 
   const dateToString = (date) => {
     return format(date, 'dd/MM/yy', { locale: he }) };
@@ -106,9 +89,7 @@ const AdminDateSelector = () => {
     <Button id='logout-btn' className='primary-bg' variant="contained" onClick={handleLogout}>התנתקות</Button>
     <div id='admin-date-selector-container' className='shadow-box'>
       <h1 className='primary-color large-header'>בחירת תאריך</h1>
-
       <div className="same-row">
-      
       <button onClick={handlePrevMonth} className='months-arrow'><i className="fa-solid fa-chevron-left"></i></button>
       <h1>{currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h1>
       <button onClick={handleNextMonth} className='months-arrow'><i className="fa-solid fa-chevron-right"></i></button>
@@ -158,5 +139,4 @@ const AdminDateSelector = () => {
 </section>
 );
 };
-
 export default AdminDateSelector;

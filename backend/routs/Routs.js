@@ -1,14 +1,11 @@
 import express from 'express';
 import AsyncHandler from '../middleware/AsyncHandler.js';
-import Day from '../models/dayModel.js';
+import Day from '../models/DayModel.js';
 import User from '../models/UserModel.js';
 import { DateTime } from 'luxon';
-
-
-
 const router = express.Router();
 
-// GET route to fetch all days (you can modify to fetch by date if necessary)
+// GET route to fetch all days 
 router.get('/', AsyncHandler(async (req, res) => {
 
   const days = await Day.find({});
@@ -29,9 +26,8 @@ router.get('/findDay', AsyncHandler(async (req, res) => {
   }
 }));
 
-
 // POST route to add a new day
-router.post('/add', AsyncHandler(async (req, res) => {
+router.post('/addDay', AsyncHandler(async (req, res) => {
   const { date,dayName, availableHours } = req.body;
 
   try {
@@ -41,7 +37,6 @@ router.post('/add', AsyncHandler(async (req, res) => {
       availableHours,
       takenHours: [], // Initialize with an empty array
     });
-
     // Save the new day document in the database
     await newDay.save();
 
@@ -73,8 +68,8 @@ router.put('/', AsyncHandler(async (req, res) => {
   }
 }));
 
-
-router.put('/update', AsyncHandler(async (req, res) => {
+// PUT route to add a taken hour
+router.put('/addTakenHour', AsyncHandler(async (req, res) => {
   const { date, hour, name, school } = req.body;
 
   // Validate that name and school are present in the request body
@@ -113,10 +108,7 @@ router.put('/update', AsyncHandler(async (req, res) => {
   }
 }));
 
-
-
-
-
+// GET route fetch all the taken hours
 router.get('/taken-hours', async (req, res) => {
   try {
     // Find all days with non-empty takenHours array
@@ -140,8 +132,7 @@ router.get('/taken-hours', async (req, res) => {
   }
 });
 
-
-// PUT route to remove hour from takenHours and add it back to availableHours
+// PUT route to remove an hour from takenHours and add it back to availableHours
 router.put('/remove-taken-hour', AsyncHandler(async (req, res) => {
   const { date, hour, name, school } = req.body; // Get the hour details from the request body
 
@@ -196,6 +187,7 @@ router.post('/login', AsyncHandler(async (req, res) => {
   }
 }));
 
+// PUT route to remove an available hour from a day
 router.put('/remove-available-hour', AsyncHandler(async (req, res) => {
   const { date, hour } = req.body;
   try {
@@ -257,7 +249,5 @@ router.put('/remove-expired-hours', AsyncHandler(async (req, res) => {
     res.status(500).json({ message: 'Failed to remove expired hours', error });
   }
 }));
-
-
 
 export default router;

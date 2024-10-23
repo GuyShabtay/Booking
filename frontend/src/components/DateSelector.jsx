@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './Style.css';
-import HourSelector from './HourSelector';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { he } from 'date-fns/locale';
 import NextLessons from './NextLessons';
 import Button from '@mui/material/Button';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loader from './Loader';
 
 
 
 const DateSelector = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [showHourSelector, setShowHourSelector] = useState(false);
   const [availableDays, setAvailableDays] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
-
-
   const daysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
   
   useEffect(() => {
@@ -33,7 +28,6 @@ const DateSelector = () => {
       const availableDaysArray = daysWithAvailableHours.map(day => day.date);
       setAvailableDays(availableDaysArray);
       setLoading(false);
-
     };
 
     const removeExpiredHours = async () => {
@@ -53,8 +47,6 @@ const DateSelector = () => {
     const totalDays = daysInMonth(currentDate);
     const dates = [];
 
-    
-
     // Add empty cells for days before the start of the month
     for (let i = 0; i < startingDayIndex; i++) {
       dates.push(null);
@@ -64,7 +56,6 @@ const DateSelector = () => {
     for (let i = 1; i <= totalDays; i++) {
       dates.push(new Date(currentDate.getFullYear(), currentDate.getMonth(), i));
     }
-
     return dates;
   };
 
@@ -81,8 +72,6 @@ const DateSelector = () => {
     sessionStorage.setItem('formatted-date',format(date, 'dd/MM/yy', { locale: he }));
     sessionStorage.setItem('day-name',format(date, 'EEEE', { locale: he }));
     navigate('/hour-selector');
-
-
   };
 
   const dateToString = (date) => {
@@ -103,11 +92,8 @@ const DateSelector = () => {
     <Button id='logout-btn' className='primary-bg' variant="contained" onClick={handleLogout}>התנתקות</Button>
     <NextLessons/>
     <div id='date-selector-container' className='shadow-box primary-color'>
-
       <h1 className='primary-color large-header'>בחירת תאריך</h1>
-
       <div className="same-row">
-      
       <button onClick={handlePrevMonth} className='months-arrow'><i className="fa-solid fa-chevron-left"></i></button>
       <h1>{currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h1>
       <button onClick={handleNextMonth} className='months-arrow'><i className="fa-solid fa-chevron-right"></i></button>
@@ -142,7 +128,6 @@ const DateSelector = () => {
                     {date.getDate()}
                   </button>
                 )}
-                
                 </td>
               ))}
             </tr>

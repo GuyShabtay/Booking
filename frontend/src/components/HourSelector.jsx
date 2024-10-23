@@ -3,8 +3,8 @@ import Summary from './Summary';
 import './Style.css';
 import axios from 'axios';
 import Button from '@mui/material/Button';
-import Loader from './Loader'; // Ensure you have the Loader component available
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import Loader from './Loader'; 
+import { useNavigate } from "react-router-dom";
 
 const HourSelector = () => {
   const [showSummary, setShowSummary] = useState(false);
@@ -23,7 +23,6 @@ const HourSelector = () => {
         const { data } = await axios.get(`https://math-lessons-backend.onrender.com/api/days/findDay`, {
           params: { date: formattedDate }
         });
-
         if (data) {
           setDay(data); // Set the day if data is returned
         } else {
@@ -57,7 +56,6 @@ const HourSelector = () => {
     return hours.sort((a, b) => {
       const [aHours, aMinutes] = a.split(':').map(Number);
       const [bHours, bMinutes] = b.split(':').map(Number);
-
       return aHours - bHours || aMinutes - bMinutes; // Sort by hours first, then by minutes
     });
   };
@@ -65,14 +63,14 @@ const HourSelector = () => {
   return (
     <section id='hour-selector'>
       {loading ? (
-        <Loader /> // Show loader while fetching data
+        <Loader /> 
       ) : (
         <>
           <button className='back' onClick={handleBack}><i className="fa-solid fa-angle-right"></i>חזרה</button>
           <div className='shadow-box'>
             <h1 className='dark-color'>בחירת שעה</h1>
             <p>({dayName}) {formattedDate}</p>
-            <div className='hours-container' style={{ direction: 'rtl' }}> {/* Ensure direction is RTL */}
+            <div className='hours-container' style={{ direction: 'rtl' }}> 
               {day.availableHours.length > 0 ? (
                 sortHours(day.availableHours).map((hour) => (
                   <div key={hour}>
