@@ -13,7 +13,6 @@ import Loader from './Loader';
 
 const DateSelector = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  // const [selectedDate, setSelectedDate] = useState(null);
   const [showHourSelector, setShowHourSelector] = useState(false);
   const [availableDays, setAvailableDays] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -78,8 +77,6 @@ const DateSelector = () => {
   };
 
   const handleDateClick = (date) => {
-    // setSelectedDate(date);
-  
     sessionStorage.setItem('progress', 2);
     sessionStorage.setItem('formatted-date',format(date, 'dd/MM/yy', { locale: he }));
     sessionStorage.setItem('day-name',format(date, 'EEEE', { locale: he }));

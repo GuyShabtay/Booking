@@ -50,7 +50,7 @@ const FrontPage = () => {
   return (
     <section id='front-page'>
         <img id='profile-img' src={profileImg} alt="img" />
-        <h1 className='large-header'>יובל שבתאי - מורה פרטית למתמטיקה</h1>
+        <h1 className='big-header'>יובל שבתאי - מורה פרטית למתמטיקה</h1>
         <Button id='schedule' className='default-bg' variant="contained" onClick={handleSetLesson}>קביעת שיעור</Button>
         <img id='front-page-bg' src={frontPageBg} alt="img" />
         <div id='linear-gradient-bg'></div>

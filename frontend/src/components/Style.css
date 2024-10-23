@@ -68,8 +68,8 @@ p{
   text-align: right ;
 }
 .MuiTextField-root {
-  margin: 10px 0; /* Adjust to your desired spacing */
-  width: 100%; /* Ensure full width usage */
+  margin: 10px 0; 
+  width: 100%; 
 }
 .small-header{
   font-size: 25px !important;
@@ -173,7 +173,6 @@ border-bottom-right-radius: 25px ;
  }
  #login-form{
   width: 90%;
-/* min-height: 370px; */
  }
  #confirm-login{
   background-color: rgba(196, 196, 196, 0.254) ;
@@ -303,7 +302,6 @@ border-bottom-right-radius: 25px ;
 
 #summary{
   width: 100%;
-  /* color: black; */
   font-size: 20px;
 }
 #summary-details{
@@ -322,7 +320,6 @@ border-bottom-right-radius: 25px ;
 
 #approve-message{
   margin-top: 50px;
-  /* color:black; */
   font-size: 20px;
 }
 #approve-message i{
@@ -374,7 +371,7 @@ border-bottom-right-radius: 25px ;
 .progress-bar-4 {
   height: 100%;
   animation: fillAnimation 1.5s ease-out;
-  transform-origin: right; /* Ensures animation starts from the right */
+  transform-origin: right; 
   filter: drop-shadow( 0 2px 2px rgba(0, 0, 0, 0.3)); 
 }
 .progress-bar-1 {
@@ -426,6 +423,7 @@ border-bottom-right-radius: 25px ;
 }
 
 /* Admin Add Lesson */
+
 #admin-add-lesson h1{
   font-size: 30px;
 }
