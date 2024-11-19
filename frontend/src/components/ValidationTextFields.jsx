@@ -8,7 +8,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
 
-const schoolOptions = ["'אורט מקיף א", "'מקיף ב", "'מקיף ד", "'מקיף ה", "'מקיף ו", "אורט רונסון", "אורט אפרידר","אומנויות","מצפה ברנע","מצפה ימים"];
+const schoolOptions = ["'אורט מקיף א", "'מקיף ב", "'מקיף ד", "'מקיף ה", "'מקיף ו", "אורט רונסון", "אורט אפרידר","אומנויות","מצפה ברנע","מצפה ימים","פסגות"];
 
 export default function ValidationTextFields({ updateDetails, name, setName, school, setSchool }) {
   const [errors, setErrors] = useState({
